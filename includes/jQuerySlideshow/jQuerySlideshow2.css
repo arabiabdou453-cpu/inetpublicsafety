@@ -1,0 +1,529 @@
+.JQuerySlideshowSlice {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+}
+.JQuerySlideshowBox {
+  display: block;
+  position: absolute;
+  z-index: 5;
+}
+.JQuerySlideshowShow {
+  display: block;
+}
+.JQuerySlideshowHide {
+  display: none;
+}
+.JQuerySlideshow {
+  position: relative;
+  text-align: left;
+}
+/* reset slider inner li*/
+.JQuerySlideshow li li {
+  width: auto;
+  height: auto;
+  list-style-type: disc;
+  list-style-position: outside;
+  list-style-image: none;
+  display: none;
+}
+/* content style start */
+#jQuerySlideshow2 .header {
+  border-left: 0px none #0066cc;
+  border-top: 0px none #0066cc;
+  border-bottom: 0px none #0066cc;
+  border-right: 0px none #0066cc;
+  padding: 0px 0px 0px 0px;
+  color: #ff0000;
+  text-align: left;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left top;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+}
+#jQuerySlideshow2 .subheader {
+  border-left: 0px none #0066cc;
+  border-top: 0px none #0066cc;
+  border-bottom: 0px none #0066cc;
+  border-right: 0px none #0066cc;
+  padding: 0px 0px 0px 0px;
+  color: #ff0000;
+  text-align: left;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left top;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1;
+}
+#jQuerySlideshow2 .paragraph {
+  border-left: 0px none #0066cc;
+  border-top: 0px none #0066cc;
+  border-bottom: 0px none #0066cc;
+  border-right: 0px none #0066cc;
+  padding: 0px 0px 0px 0px;
+  color: #ff0000;
+  text-align: left;
+  text-align: left;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left top;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+}
+/* content style end */
+/* content style end */
+#jQuerySlideshow2Container {
+  border-left: 0px none #0066cc;
+  border-top: 0px none #0066cc;
+  border-bottom: 0px none #0066cc;
+  border-right: 0px none #0066cc;
+  position: relative;
+  width: 850px;
+  height: 385px;
+  color: #000000;
+  -webkit-transition: all 20s;
+  -moz-transition: all 20s;
+  -ms-transition: all 20s;
+  -o-transition: all 20s;
+  transition: all 20s;
+  background-color: transparent;
+  background-image: url('./backgrounds/jQuerySlideshow2/background.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+#jQuerySlideshow2 {
+  background: #ffffff none no-repeat left top scroll;
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  padding: 5px 5px 5px 5px;
+  z-index: 100;
+  position: absolute;
+  color: #000000;
+  width: 838px;
+  height: 335px;
+  top: 0px;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  -webkit-transition: all 0s 25s;
+  -moz-transition: all 0s 25s;
+  -ms-transition: all 0s 25s;
+  -o-transition: all 0s 25s;
+  transition: all 0s 25s;
+}
+#jQuerySlideshow2 img {
+  border-left: 0 none #000000;
+  border-top: 0 none #000000;
+  border-bottom: 0 none #000000;
+  border-right: 0 none #000000;
+}
+#jQuerySlideshow2 ul, #jQuerySlideshow2 li {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  position: relative;
+  list-style-type: none;
+  list-style-position: outside;
+  list-style-image: none;
+}
+/*	nav bar resets */
+#jQuerySlideshow2_bullets_in, #jQuerySlideshow2_bullets_in ul, #jQuerySlideshow2_bullets_in li {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  position: relative;
+  list-style-type: none;
+  list-style-position: outside;
+  list-style-image: none;
+  width: auto;
+  height: auto;
+}
+/*	nav bar container */
+#jQuerySlideshow2_bullets_in {
+  position: absolute;
+  top: auto;
+  left: auto;
+}
+/*	nav bar container */
+#jQuerySlideshow2_bullets_in {
+  background: transparent none no-repeat left top scroll;
+  border-left: 0px none transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px none transparent;
+  border-right: 0px none transparent;
+  padding: 0px 0px 0px 0px;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  right: 112px;
+  bottom: 64px;
+  z-index: 1000;
+}
+/*	nav bar ul */
+#jQuerySlideshow2_bullets_in ul {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+/*	nav bar element container */
+#jQuerySlideshow2_bullets_in li {
+  float: left;
+  padding-right: 7px;
+}
+/*	nav bar element normal state */
+#jQuerySlideshow2_bullets_in li a {
+  background: transparent url('./skin1/default/nav_item_up.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% Arial,Helvetica,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  float: left;
+  width: 12px;
+  height: 11px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  text-transform: none;
+}
+/*	nav bar element hover state */
+#jQuerySlideshow2_bullets_in li a.hover {
+  background: transparent url('./skin1/default/nav_item_over.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% Arial,Helvetica,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  float: left;
+  width: 12px;
+  height: 11px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  text-transform: none;
+}
+/*	nav bar element active state */
+#jQuerySlideshow2_bullets_in li a.active {
+  background: transparent url('./skin1/default/nav_item_down.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% Arial,Helvetica,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  float: left;
+  width: 12px;
+  height: 11px;
+  cursor: pointer;
+  color: #0000ff;
+  text-decoration: none;
+  text-align: left;
+  text-transform: none;
+}
+#jQuerySlideshow2_bullets_next_in {
+  background: transparent url('./skin1/default/next_button_up.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px none #000000;
+  border-top: 0px none #000000;
+  border-bottom: 0px none #000000;
+  border-right: 0px none #000000;
+  padding: 0px 0px 0px 0px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+  right: auto;
+  bottom: auto;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  left: 742px;
+  top: 268px;
+  display: none;
+}
+#jQuerySlideshow2_bullets_next_in.hover {
+  background: transparent none no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  right: 0px;
+  bottom: auto;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#jQuerySlideshow2_bullets_back_in {
+  background: transparent url('./skin1/default/back_button_up.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  right: auto;
+  bottom: auto;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  left: 214px;
+  top: 229px;
+  display: none;
+}
+#jQuerySlideshow2_bullets_back_in.hover {
+  background: transparent none no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  right: 0px;
+  bottom: auto;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#jQuerySlideshow2_bullets_in.hover {
+  background: transparent url('./skin1/default/back_button_over.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px solid #000000;
+  border-top: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  border-right: 0px solid #000000;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  right: 0px;
+  bottom: auto;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/*	inner back button positioning */
+#jQuerySlideshow2_back_in {
+  position: absolute;
+  top: auto;
+  left: auto;
+}
+/*	inner back button normal state */
+#jQuerySlideshow2_back_in {
+  background: transparent url('./skin1/default/back_button_up.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  padding: 0px 0px 0px 0px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+  right: 218px;
+  bottom: 60px;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 999;
+}
+/*	inner back button hover state */
+#jQuerySlideshow2_back_in.hover {
+  background: transparent url('./skin1/default/back_button_over.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+/*	inner next button positioning */
+#jQuerySlideshow2_next_in {
+  position: absolute;
+  top: auto;
+  left: auto;
+}
+/*	inner next button normal state */
+#jQuerySlideshow2_next_in {
+  background: transparent url('./skin1/default/next_button_up.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  padding: 0px 0px 0px 0px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+  right: 47px;
+  bottom: 60px;
+  color: #666666;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 999;
+}
+/*	inner next button hover state */
+#jQuerySlideshow2_next_in.hover {
+  background: transparent url('./skin1/default/next_button_over.png') no-repeat left top scroll;
+  font: normal normal normal 12px/100% "Arial Black",Gadget,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+#jQuerySlideshow2_caption_in {
+  position: absolute;
+  top: 7px;
+  left: auto;
+}
+#jQuerySlideshow2_caption_in {
+  background: #000000 none no-repeat left top scroll;
+  font: normal normal normal 28px/100% Arial,Helvetica,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  padding: 41px 0px 0px 40px;
+  position: absolute;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+  width: 286px;
+  height: 291px;
+  z-index: 900;
+  bottom: auto;
+  right: 6px;
+  transition-delay: 500;
+}
+#jQuerySlideshow2_subcaption_in {
+  background: transparent none no-repeat left top scroll;
+  font: normal normal normal 12px/150% Arial,Helvetica,sans-serif;
+  border-left: 0px none #666666;
+  border-top: 0px none #666666;
+  border-bottom: 0px none #666666;
+  border-right: 0px none #666666;
+  padding: 0px 0px 0px 0px;
+  position: absolute;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+  width: 227px;
+  height: 127px;
+  z-index: 901;
+  left: auto;
+  right: 48px;
+  top: 100px;
+  bottom: auto;
+}
+.jQuerySlideshow2_tooltip_in {
+  border-left: 0px solid #ffffff;
+  border-top: 0px solid #ffffff;
+  border-bottom: 0px solid #ffffff;
+  border-right: 0px solid #ffffff;
+  padding: 0px 0px 0px 0px;
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  background-position: left top;
+}
+.jQuerySlideshow2_tooltip_in_preview_wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.jQuerySlideshow2_tooltip_in_preview {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  list-style-type: none;
+}
+.jQuerySlideshow2_tooltip_in_preview li {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  float: left;
+}
+.jQuerySlideshow2_tooltip_in_preview li img {
+  display: block;
+}
+
+/*
+     FILE ARCHIVED ON 07:47:17 Aug 04, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:51:10 Oct 30, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.526
+  exclusion.robots: 0.064
+  exclusion.robots.policy: 0.054
+  esindex: 0.008
+  cdx.remote: 37.849
+  LoadShardBlock: 201.783 (3)
+  PetaboxLoader3.datanode: 160.025 (4)
+  PetaboxLoader3.resolve: 168.39 (2)
+  load_resource: 154.462
+*/

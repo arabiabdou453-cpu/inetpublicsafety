@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iNet Public Safety - NG CAD Dispatch & Call Handling Solutions</title>
+  <link rel="shortcut icon" href="./images/about_team.png" type="image/x-icon"/>
+  <meta name="keywords" content="Computer Aided Dispatch, CAD, NG911, Call Handling, Public Safety, Police, Fire, EMS Dispatch, GIS Mapping, Mobile Dispatch"/>
+  <meta name="description" content="iNet Public Safety Inc. provides map-centric Next Generation Computer Aided Dispatch (CAD), NG911 Call Handling System (CHS), and field mobile dispatch solutions."/>
+  <link href="./stylesheets/reset.css" rel="stylesheet" type="text/css"/>
+  <link href="./stylesheets/index.css" rel="stylesheet" type="text/css"/>
+  <link href="./includes/jQuerySlideshow/jQuerySlideshow2.css" rel="stylesheet" type="text/css"/>
+  <meta name="google-site-verification" content="75CUq4TUsXM4uCEGSzuZLZ3qcBGr8I87bhwTpdKJcwc"/>
+ 
+<style>
+  /* Responsive viewport enhancements */
+  @media (max-width: 980px) {
+    .main_wrapper { width: 95% !important; margin: 10px auto !important; }
+    .header { margin: 10px !important; }
+    .logo_holder img { max-width: 100% !important; height: auto !important; }
+    .hmenubar li { float: none !important; display: inline-block !important; }
+    .slideshow { width: 100% !important; height: auto !important; }
+    #jQuerySlideshow2Container { width: 100% !important; height: auto !important; }
+    #jQuerySlideshow2 { width: 100% !important; height: auto !important; }
+    #jQuerySlideshow2 ul li img { width: 100% !important; height: auto !important; }
+    .hover_boxes .box_area { width: 100% !important; float: none !important; margin-bottom: 20px !important; }
+    .client_box { width: 100% !important; float: none !important; }
+  }
+
+  /* Smooth Carousel Fade & Controls */
+  #jQuerySlideshow2 ul { position: relative; list-style: none; padding: 0; margin: 0; }
+  #jQuerySlideshow2 ul li { display: none; }
+  #jQuerySlideshow2 ul li.active-slide { display: block; animation: fadeIn 0.6s ease-in-out; }
+  @keyframes fadeIn { from { opacity: 0.3; } to { opacity: 1; } }
+
+  #jQuerySlideshow2_bullets_in {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    z-index: 20;
+  }
+  #jQuerySlideshow2_bullets_in ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+  }
+  #jQuerySlideshow2_bullets_in ul li {
+    cursor: pointer;
+  }
+  #jQuerySlideshow2_bullets_in ul li a {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid #005691;
+    transition: all 0.2s ease;
+  }
+  #jQuerySlideshow2_bullets_in ul li a.active,
+  #jQuerySlideshow2_bullets_in ul li a:hover {
+    background: #ff6600;
+    transform: scale(1.15);
+  }
+
+  #jQuerySlideshow2_back_in, #jQuerySlideshow2_next_in {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  #jQuerySlideshow2_back_in:hover, #jQuerySlideshow2_next_in:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translateY(-50%) scale(1.08);
+  }
+  #jQuerySlideshow2_back_in { left: 15px; }
+  #jQuerySlideshow2_next_in { right: 15px; }
+  #jQuerySlideshow2_back_in::after { content: '❮'; }
+  #jQuerySlideshow2_next_in::after { content: '❯'; }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('#jQuerySlideshow2 ul li');
+    const bullets = document.querySelectorAll('#jQuerySlideshow2_bullets_in ul li');
+    const prevBtn = document.getElementById('jQuerySlideshow2_back_in');
+    const nextBtn = document.getElementById('jQuerySlideshow2_next_in');
+    
+    let currentIndex = 0;
+    const total = slides.length;
+
+    function showSlide(idx) {
+      if (idx < 0) idx = total - 1;
+      if (idx >= total) idx = 0;
+      currentIndex = idx;
+
+      slides.forEach((s, i) => {
+        s.classList.toggle('active-slide', i === currentIndex);
+      });
+
+      bullets.forEach((b, i) => {
+        const a = b.querySelector('a');
+        if (a) {
+          a.className = (i === currentIndex) ? 'active' : '';
+        }
+      });
+    }
+
+    // Initialize first slide
+    showSlide(0);
+
+    // Auto rotate every 4.5 seconds
+    let timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+
+    bullets.forEach((b, i) => {
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearInterval(timer);
+        showSlide(i);
+        timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+      });
+    });
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        clearInterval(timer);
+        showSlide(currentIndex + 1);
+        timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        clearInterval(timer);
+        showSlide(currentIndex - 1);
+        timer = setInterval(() => showSlide(currentIndex + 1), 4500);
+      });
+    }
+  });
+</script>
+
+</head>
+ <body>
+  <div class="main_wrapper cf">
+   <div class="header cf">
+    <div class="logo_holder"><a href="index.html" target="_self"><img class="image6" src="./images/inetps_resized.png" width="346" height="80"/></a>
+
+    </div>
+    <div class="search_holder">
+     <form action="" method="get"></form>
+    </div>
+    <div class="row_10 cf"><a href="index.html" target="_self">Eng</a>
+
+    </div>
+    <div class="row_esp cf"><a href="index_esp.html" target="_self">Esp</a>
+
+    </div>
+    <div class="nav_holder cf">
+     <ul class="hmenubar cf">
+      <li class=""><a href="index.html" class="clicked" target="_self">Home</a> 
+      </li>
+      <li class=""><a href="about.html" target="_self">Company</a> 
+      </li>
+      <li class=""><a href="services.html" target="_self">Products</a> 
+      </li>
+      <li class=""><a href="support.html">SUPPORT</a> 
+      </li>
+      <li class=""><a href="contact.html">Contact</a> 
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content cf">
+    <div class="slideshow cf">
+     <div id="jQuerySlideshow2Container" data-xeditor-translated="true">
+      <div id="jQuerySlideshow2" class="JQuerySlideshowShow">
+       <ul class="JQuerySlideshowHide">
+        <li title="slide1">
+         <img src="./images/sail1.jpg"/>
+        </li>
+        <li title="slide2">
+         <img src="./includes/jQuerySlideshow/images/jQuerySlideshow2/image2.jpg"/>
+        </li>
+        <li title="slide3">
+         <img src="./includes/jQuerySlideshow/images/jQuerySlideshow2/image3.jpg"/>
+        </li>
+        <li title="slide4">
+         <img src="./includes/jQuerySlideshow/images/jQuerySlideshow2/image4.jpg" class="JQuerySlideshow"/>
+        </li>
+       </ul>
+      </div>
+      <div id="jQuerySlideshow2_bullets_in">
+       <ul>
+        <li title="slide1"><a></a>
+
+        </li>
+        <li title="slide2"><a class="hover"></a>
+
+        </li>
+        <li title="slide3"><a class="active"></a>
+
+        </li>
+        <li title="slide4"><a></a>
+
+        </li>
+       </ul>
+      </div>
+      <div id="jQuerySlideshow2_back_in"></div>
+      <div id="jQuerySlideshow2_next_in"></div>
+     </div>
+    </div>
+    <div class="hover_boxes cf">
+     <div class="box_area">
+       <h2 class="heading" style="font-size: 23px; ">Next Generation CAD/Mobile Solutions</h2>
+
+       <h2 class="heading3_vorder"><span class="top_descx">The iNet Public Safety solution  truly is the next step in technology. Our Enterprise Class, Map-Centric CAD and Mobile are powerful solutions developed with ease of use in mind. Seamless integration between CAD, Mobile and other interfaced 3rd party systems provides for optimal workflow and maximum situational awareness for dispatchers and in-field personnel. CAD &amp; Mobile have been designed from the gound up to support remote access over the internet natively or by using VPN thereby providing agencies with the maximum operational flexibility and convenience. Any authorized computer whether it be at your PSAP, EOC or in the field, can quickly access the system via LAN, WAN, Cell, WiFi. Automated application and map updates help reduce the load on your IT personnel. With existing sites of from 1 to 210+ active CAD stations, the iNet solution has proven scalability, redundancy and performance. The power, flexibility and ability to scale to very large sites makes the iNet solution a perfect choice for country, state/province wide deployments to small single position sites.</span></h2>
+
+     </div>
+     <div class="box_area">
+       <h2 class="heading" style="font-size: 23px; ">Next Generation 911 (NG911) Call Handling Solution</h2>
+
+       <h2 class="heading3_vorder"><span class="top_descx">
+The iNet911 CHS provides 911 primary and secondary PSAPs with a redundant NG911 call handling solution that can also operate under E911. The CHS includes a software phone console (iNetPhone softphone) which is powerful, intuitive and simple to operate. Integration with other (non-iNet) CAD systems is accomplished via the standard NENA interface specification for CAD interfaces or via the NENA I3 specifications for NG911 Call Handling Systems. We have many installations in operation with 3rd Party CHS products integrated to our CAD. For sites using iNetCAD in addition to iNet911 CHS, integration comes out of the box and provides for many additional integration features such as for example a single shared map with CAD, initiating calls from iNetCAD and more.
+
+</span></h2>
+
+     </div>
+     <div class="box_area">
+       <h2 class="heading" style="font-size: 23px; ">On-Premise Installation or Cloud Hosted</h2>
+
+       <h2 class="heading3_vorder"><span class="top_descx">You can choose whether to have the complete iNet solution installed at your premise or to access the solution in the Cloud as an iNet Hosted Solution. iNet Public Safety products have been created from the gound up with these possibilities in mind and without the cost structure thats inherent in the older technology still being sold today. Purchase outright or pay a service subscription. Contact us to discuss how truly simple to implement this can be. If you're looking to move from your Intergraph, Hexagon, Tritech, CentralSquare, FDM or other vendor's system give us a call to see how we can provide a proven solution at a much lower cost.</span></h2>
+
+     </div>
+    </div>
+    <div class="about_us cf">
+     <div class="client_box">
+       <h2 class="about">Customer Highlights</h2>
+
+      <div class="client_review cf">
+       <img class="client_1" alt="" src="./images/image003.png"/>
+       <div class="review_text">
+        <p class="revtitle">National911, Dominican Republic</p>
+        <p class="revtext">DR National 911 uses iNetCAD for 911 calls, Police, Fire and Ambulance dispatch for the country  (Pop: 11.5 million).&nbsp;The iNet Public Safety solution has been in operation for over a decade and includes over 220 CAD positions operating across two separate PSAPs with thousands of units in the field. The two PSAPs operate in an Active/Active mode, and each PSAP can act as a failover for the other PSAP if required.&nbsp;This is a busy site with the first month having sustained call volumes of 30,000 calls per day which eventually eased to the regular 15,000 calls per day</p><a href="customers.html" class="readmore_review" target="_self">More Info</a> 
+       </div>
+      </div>
+      <div class="client_review_bot cf">
+       <img class="client_2" alt="" src="./images/islandems.PNG"/>
+       <div class="review_text_bot">
+        <p class="revtitle">Charlottetown, PE, Canada</p>
+        <p class="revtext">PEI Provincial 911 Centre uses iNet911 CHS/iNetPhone, iNetCAD and iNetMobile to answer 911 calls, dispatch Fire and Ambulance services for the province.</p> <a href="customers.html" class="readmore_review">More Info</a>
+
+       </div>
+      </div>
+     </div>
+     <div class="client_box">
+       <h2 class="about"><br/></h2>
+
+      <div class="client_review cf">
+       <img class="client" alt="" src="./images/mercy.jpg"/>
+       <div class="review_text">
+        <p class="revtitle">Mercy Hospital Network EMS Dispatch Centre, USA</p>
+        <p class="revtext">Mercy Hospital Network EMS Dispatch Center chooses iNetCAD &amp; INetMobile for Mercy's EMS Dispatch Center. The solution provides 10 calltakers/dispatchers and 80+ vehicles with a next generation, fully integrated Computer Aided Dispatch &amp; In-Field Mobile solution. The iNet Public Safety solution incldes multiple interfaces including ProQA as well as 2 additional CAD dispatch positions operating from a Mobile Command Center &nbsp;vehicle.&nbsp;</p> <a href="customers.html" class="readmore_review" target="_self">More Info</a>
+
+       </div>
+      </div>
+      <div class="client_review_bot cf">
+       <img class="client" alt="" src="./images/images.jpg"/>
+       <div class="review_text_bot">
+        <p class="revtitle">Taber, Alberta, Canada</p>
+        <p class="revtext">Taber Regional 911 Center uses iNet911 CHS/iNetPhone, iNetCAD to answer 911 calls &amp; dispatch Police and Fire Departments in the region. Fire and Police personnel within the region use iNetMobile in the field. The solution includes interfaces to CPIC and ProQA.  </p> <a href="customers.html" class="readmore_review">More Info</a>
+
+       </div>
+      </div>
+     </div><a href="customers.html" class="button2" target="_self">More Customer Highlights</a>
+
+    </div>
+   </div>
+   <div class="footer cf">
+    <p class="rights">iNet Public Safety Inc. © 2009-2023 All Rights Reserved</p>
+   </div>
+  </div>
+ </body>
+
+</html>

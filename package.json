@@ -1,0 +1,24 @@
+{
+  "name": "inetpublicsafety",
+  "version": "1.0.0",
+  "description": "iNet Public Safety - Enterprise Map-Centric NG911 CAD & Field Mobile Dispatch Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "public-safety",
+    "cad",
+    "dispatch",
+    "ng911",
+    "emergency-response",
+    "call-handling",
+    "gis",
+    "police-dispatch",
+    "fire-dispatch",
+    "ems-dispatch"
+  ],
+  "author": "Abdou Arabi",
+  "license": "MIT"
+}
